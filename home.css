@@ -1,0 +1,94 @@
+
+*{  /*for body Its best practice */
+    padding: 0%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .wrapper
+  {
+    width: 100%;
+    margin: 0 auto; 
+  } 
+a
+  {
+    text-decoration:aliceblue;
+    color: black;
+    padding :10px 10px;
+    font-size: 17px;
+    float: left; 
+  }
+
+  a:hover{
+    background-color: #ddd;
+    color: white;
+    }
+.nav ul{
+  
+   list-style-type: none; 
+   padding: 3px;
+   margin: 0px;
+   display: flex; 
+   align-items: center; 
+   
+ }
+
+ .nav ul li{
+     display: inline;
+     margin: 29px;
+     padding: inherit;
+     
+ }
+  #logo{
+      width: 120px; 
+      height: 120px; 
+  }
+  .nav{
+    display: flex;
+    justify-content: normal;
+    background-color: steelblue;  
+  }
+  .nav input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 8px;
+    border: none;
+    font-size: 17px;
+  }
+  .videoPro{
+   width: 100%;
+   height: 400px; 
+   } 
+
+  .videoPro video {
+      width: 100% ;
+      height: 100%;
+      position:static;
+      object-fit:fill;   
+
+  }
+  .cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; 
+      padding: 30px; 
+      /* gap: 25px; */
+  }
+ .card{
+    width: 30%;
+    border: none;
+    padding: 30px;     
+  }
+
+  .divSubImg {
+      width: 100%;
+      height: 150px;
+  }
+
+  .divSubImg img {
+      width: 100%;
+      height: 100%;
+  }
+
+
