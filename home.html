@@ -14,14 +14,28 @@
     
         <div class="wrapper">
             
-            <header>
-                <ul class="nav"> 
-                <li><img id="logo" src="./lo.jpg" alt="Logo" class="logoImg" /></li>
-                <li><a href="home.html"></i>Home</a></li>
-                <li><button class ="Teacherbtn success" onclick= "seeTecjers()" >Teachers</button></li>
-                <li><input class ="search-container" type="text" name="Search" placeholder="Search.."><button class ="submitClass"type="submit">Submit</button> </li>
-               </ul>
-            </header>
+            <input type="checkbox" id="check">
+                <nav> 
+                <!-- <img id="logo" src="./lo.jpg" alt="Logo" class="logoImg" /> -->
+                <div class = "icon"><b style="color: #60ce80;">E</b> -learning </div>
+                 
+                <div class ="search_box">  
+                    <input type="Search" placeholder="What you are looking for ...">
+                <!-- <button class ="submitClass" type ="submit"> </button> -->
+                <span class="fa fa-search"></span> 
+                </div>
+                <ol>
+                    <li><a href="home.html">Home</a></li>
+                    <li><button class ="Teacherbtn success" onclick= "seeTecjers()" >Teachers</button></li>
+                    <li><a href="home.html">About Us</a></li>
+                    <li><a href="home.html">Contact Us</a></li>
+                </ol> 
+                <label for="check" class="bar">
+                    <span class="fa fa-bars" id ="bars"></span>
+                    <span class="fa fa-times" id ="times"></span>
+                </label>
+                </nav> 
+            
             
 
     <div class="videoPro"><video loop muted autoplay part="">
@@ -54,10 +68,11 @@
         </div>
     </footer>
 
+</div>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="./home.js"></script>
-    </div> <!--  class wrapper -->
+     <!--  class wrapper -->
 </body>
 
 </html>

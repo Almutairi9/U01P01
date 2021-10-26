@@ -2,9 +2,9 @@ const learning = [
   {
     teacherName: "Rawan Almutairi",
     teacherImage: "user.png",
-    cousreName: "Information Tecnology",
-    cousreImage: "itimg.jpg",
-    cousrebackgroundImg: "itimg.jpg",
+    cousreName: "Information Technology",
+    cousreImage: "it.jpg",
+    cousrebackgroundImg: "it.jpg",
     cousredescriptionForSubject:
       "The field of information technology, or IT, covers the support, administration, and design of telecommunications and computer systems. Some positions in this field include system analysts, software programmers, computer scientists, computer support specialists, and network and database administrators.", 
     cousredescriptionForSecondSubject: "", 
