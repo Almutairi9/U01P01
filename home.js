@@ -1,8 +1,8 @@
 const learning = [
   {
-    teacherName: "Rawan Almutairi",
+    teacherName: "<b>Rawan Almutairi </b> </br></br> Information Technology Teacher",
     teacherImage: "user.png",
-    cousreName: "Information Technology",
+    cousreName: "Information Technology", 
     cousreImage: "it.jpg",
     cousrebackgroundImg: "it.jpg",
     cousredescriptionForSubject:
@@ -12,11 +12,11 @@ const learning = [
     secoundurl: "https://www.youtube.com/embed/bSsnjFzaNK8",
   }, 
   {
-    teacherName: "Suha Alhomaid",
+    teacherName: "<b>Suha Alhomaid</b> </br></br> Math Teacher",
     teacherImage: "user.png",
     cousreName: "Math",
     cousreImage: "mathimg.jpg", 
-    cousrebackgroundImg: "mathimg.jpg",
+    // cousrebackgroundImg: "mathimg.jpg",
     cousredescriptionForSubject:
       " Mathematics is the science that deals with the logic of shape, quantity, and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports ",
     cousredescriptionForSecondSubject: "",
@@ -24,20 +24,20 @@ const learning = [
     secoundurl: "https://www.youtube.com/embed/grnP3mduZkM",
   },
   {
-    teacherName: "Rawan Almutairi",
+    teacherName: "<b>Rawan Almutairi</b> </br></br> Art Teacher",
     teacherImage: "user.png",
     cousreName: "Art",
     cousreImage: "artimg.jpg",
     cousrebackgroundImg: "artimg.jpg",
     cousredescriptionForSubject:
-      " Introduction to Art: Concepts & Techniques is an art appreciation course created for individuals without any artistic background. ... The main emphasis of the course is to teach you hands-on studio art techniques as you conduct personal research and explore your own creativity.",
+      " Introduction to Art: <br><br> Concepts & Techniques is an art appreciation course created for individuals without any artistic background. ... <br><br>The main emphasis of the course is to teach you hands-on studio art techniques as you conduct personal research and explore your own creativity.",
     // cousrebackgroundSecondImg: "artimg.jpg",
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/gaTLt9HKzmk",
     secoundurl: "https://www.youtube.com/embed/gaTLt9HKzmk",
   },
   {
-    teacherName: "Rawan Almutairi",
+    teacherName: "<b>Rawan Almutairi</b> </br></br> Biology Teacher", 
     teacherImage: "user.png",
     cousreName: "Biology  ",
     cousreImage: "bioolgyimg.jpg",
@@ -50,7 +50,7 @@ const learning = [
     secoundurl: "https://www.youtube.com/embed/-tJmEIU1RgQ",
   },
   {
-    teacherName: "Rawan Almutairi",
+    teacherName: "<b>Rawan Almutairi</b> </br></br> Chemistry Teacher", 
     teacherImage: "user.png",
     cousreName: "Chemistry",
     cousreImage: "chemistryimg.jpg",
@@ -63,14 +63,14 @@ const learning = [
     secoundurl: "https://www.youtube.com/embed/6Q-pYtR5I90",
   },
   {
-    teacherName: "Rawan Almutairi",
+    teacherName: "<b>Rawan Almutairi</b> </br></br> English language Teacher",
     teacherImage: "user.png",
     cousreName: "English language ",
     cousreImage: "englishimg.jpg",
     cousrebackgroundImg: "englishimg.jpg",
     cousredescriptionForSubject:
       " English is thought to be one of the most important languages in the world. There are many reasons why English is so important. One of the reasons is that English is spoken as the first language in many countries. There are 104 countries where English is spoken as the first language.",
-    cousrebackgroundSecondImg: "englishimg.jpg",
+    // cousrebackgroundSecondImg: "englishimg.jpg",
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/WlNiUQwqflE",
     secoundurl: "https://www.youtube.com/embed/WlNiUQwqflE",
@@ -100,10 +100,9 @@ function seeMore(index) {
   console.log(learning[index]);
   const item = learning[index];
   $(".oneitem").append(` <div class ="secondLevelPage">
-    <div class = "backgroundImg"><img src="${learning[index].cousrebackgroundImg}" alt="IT-Subject"/> </div>
-    <div class ="courseUrl"><iframe src="${learning[index].url}"> </iframe></div> 
+    <div class ="courseUrl"><iframe class='courseUrFlrame' src="${learning[index].url}"> </iframe></div> 
    <p class ="descriptionForSubject"> ${learning[index].cousredescriptionForSubject} </p>  
-   <button class = "NextLecture" id = "NextLecture${index}"> Next Lecture </button> </div> `);
+   <button class = "NextLecture success" id = "NextLecture${index}"> Next Lecture </button> </div> `);
   $(`#NextLecture${index}`).click(() => secondLevel(index));
 
   render();
@@ -119,7 +118,7 @@ function secondLevel(index) {
     <div class = "backgroundSecondImg"><img src="${learning[index].cousrebackgroundSecondImg}" alt="IT-Subject"/> </div>
     <div class ="secondcourseUrl"><iframe src="${learning[index].secoundurl}"> </iframe></div> 
     <p class ="descriptionForSecondSubject"> ${learning[index].cousredescriptionForSecondSubject} </p> 
-   <button class = "Submit" id ="Submit${index}"> Take quiz </button> </div> `);
+   <button class = "Submit success" id ="Submit${index}"> Take quiz </button> </div> `);
   $(`#NextLecture${index}`).off("click");
   render();
 }
@@ -128,13 +127,16 @@ const seeTecjers = () => {
 
   $(".Teachers").html("");
   $(".cards").hide();
-  $(".videoPro").hide();
+  $(".videoPro").hide(); 
+  $(".introduction").hide(); 
+  $(".oneitem").hide();
+  $(".seconditme").hide(); 
   for (let index = 0; index < learning.length; index++) {
     console.log(learning[index]);
     const item = learning[index];
     $(".Teachers").append(`<div class="teacher">
-    <p class ="par">${learning[index].teacherName} </p> 
-    <div class='divTeacherImg'><img src="${learning[index].teacherImage}" alt="teacher-image"/></div>  
+    <div class='divTeacherImg'><img src="${learning[index].teacherImage}" alt="teacher-image"/></div> 
+    <p class ="teachersName">${learning[index].teacherName} </p> 
     </div>`);
     $(`#Teacherbtn${index}`).click(() => seeTecjers(index));
   }
