@@ -1,27 +1,30 @@
 const learning = [
   {
-    teacherName: "<b>Rawan Almutairi </b> </br></br> Information Technology Teacher",
+    teacherName:
+      "<b>Rawan Almutairi </b> </br></br> Information Technology Teacher",
     teacherImage: "user.png",
-    cousreName: "Information Technology", 
+    cousreName: "Information Technology",
     cousreImage: "it.jpg",
     cousrebackgroundImg: "it.jpg",
     cousredescriptionForSubject:
-      "The field of information technology, or IT, covers the support, administration, and design of telecommunications and computer systems. Some positions in this field include system analysts, software programmers, computer scientists, computer support specialists, and network and database administrators.", 
-    cousredescriptionForSecondSubject: "", 
+      "The field of information technology, or IT, covers the support, administration, and design of telecommunications and computer systems. Some positions in this field include system analysts, software programmers, computer scientists, computer support specialists, and network and database administrators.",
+    cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/gkOdIZwUKfM",
     secoundurl: "https://www.youtube.com/embed/bSsnjFzaNK8",
-  }, 
+    fav :false ,
+  },
   {
     teacherName: "<b>Suha Alhomaid</b> </br></br> Math Teacher",
     teacherImage: "user.png",
     cousreName: "Math",
-    cousreImage: "mathimg.jpg", 
+    cousreImage: "mathimg.jpg",
     // cousrebackgroundImg: "mathimg.jpg",
     cousredescriptionForSubject:
       " Mathematics is the science that deals with the logic of shape, quantity, and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, architecture (ancient and modern), art, money, engineering, and even sports ",
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/TMubSggUOVE",
     secoundurl: "https://www.youtube.com/embed/grnP3mduZkM",
+    fav : false, 
   },
   {
     teacherName: "<b>Rawan Almutairi</b> </br></br> Art Teacher",
@@ -35,9 +38,10 @@ const learning = [
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/gaTLt9HKzmk",
     secoundurl: "https://www.youtube.com/embed/gaTLt9HKzmk",
+    fav: false,
   },
   {
-    teacherName: "<b>Rawan Almutairi</b> </br></br> Biology Teacher", 
+    teacherName: "<b>Rawan Almutairi</b> </br></br> Biology Teacher",
     teacherImage: "user.png",
     cousreName: "Biology  ",
     cousreImage: "bioolgyimg.jpg",
@@ -48,9 +52,10 @@ const learning = [
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/Q8ijKtdIRMQ",
     secoundurl: "https://www.youtube.com/embed/-tJmEIU1RgQ",
+    fav :false ,
   },
   {
-    teacherName: "<b>Rawan Almutairi</b> </br></br> Chemistry Teacher", 
+    teacherName: "<b>Rawan Almutairi</b> </br></br> Chemistry Teacher",
     teacherImage: "user.png",
     cousreName: "Chemistry",
     cousreImage: "chemistryimg.jpg",
@@ -61,6 +66,7 @@ const learning = [
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/Rd4a1X3B61w",
     secoundurl: "https://www.youtube.com/embed/6Q-pYtR5I90",
+    fav :false ,
   },
   {
     teacherName: "<b>Rawan Almutairi</b> </br></br> English language Teacher",
@@ -74,6 +80,7 @@ const learning = [
     cousredescriptionForSecondSubject: "",
     url: "https://www.youtube.com/embed/WlNiUQwqflE",
     secoundurl: "https://www.youtube.com/embed/WlNiUQwqflE",
+    fav :false,
   },
 ];
 
@@ -84,13 +91,59 @@ const render = () => {
         <div class='divSubImg'><img  src= "${learning[index].cousreImage}" alt="IT-Subject"/></div>   
         <p class ="par"> ${learning[index].cousreName} </p>
         <button class = "btn success" id ="btn${index}"> Enroll </button>
+        <button class="Book success" id ="Book${index}">Bookmark </button> 
          </div>`);
     $(`#btn${index}`).click(() => seeMore(index));
-    // still we have to put vote faivorate **
+    $(`#Book${index}`).click(() => favoriteCard(index));
+
+    // if(item.Book === true){
+    //   $("#Book"+i).removeClass("Book")
+    //   $("#Book"+i).addClass("Book")
+    // } 
   }
 };
-render();
+render(); 
 
+function favoriteCard(index) {
+  cards[index].Book = !cards[index].Book
+  localStorage.setItem("arr",JSON.stringify(cards))
+  }
+  render(); 
+// search
+
+$(".search_term").change(() => {
+  const searchArr = learning.filter((item) => {
+    return item.cousreName.toLowerCase.includes($(".search_term").val().toLowerCase());
+  });
+  console.log(searchArr);
+
+  $(".cards").hide();
+  $(".oneitem").hide();
+  $(".seconditme").hide();
+  $(".Teachers").hide();
+  $(".footer").hide(); 
+  searchArr.forEach((item,i)=>{
+    $(".searchR").append(`<div class ="result">`);
+  }) 
+  
+}); 
+render();
+// const search = () => {
+  
+//   const searchArr = learning.filter((item)=>{
+//     for (let index = 0; index < learning.length; index++) {
+//      if ($('.search_term').val().length ){
+//       let inputValue = $(".search_term").val();
+//         $(".searchR").append(`<div class ="result">`
+//     ) } 
+//     // $(".videoPro").hide();
+//     // $(".cards").hide();
+//     // $(".introduction").hide();
+//   }
+//     return item.cousreName.includes(inputValue)
+    
+//   })
+// }
 // seeMore Function that will enroll the Course you have clicked
 
 function seeMore(index) {
@@ -115,8 +168,7 @@ function secondLevel(index) {
   console.log(learning[index]);
   const item = learning[index];
   $(".seconditme").append(` <div class ="takeQuizPage" >
-    <div class = "backgroundSecondImg"><img src="${learning[index].cousrebackgroundSecondImg}" alt="IT-Subject"/> </div>
-    <div class ="secondcourseUrl"><iframe src="${learning[index].secoundurl}"> </iframe></div> 
+    <div class ="secondcourseUrl"><iframe class='courseUrFlrame' src="${learning[index].secoundurl}"> </iframe></div> 
     <p class ="descriptionForSecondSubject"> ${learning[index].cousredescriptionForSecondSubject} </p> 
    <button class = "Submit success" id ="Submit${index}"> Take quiz </button> </div> `);
   $(`#NextLecture${index}`).off("click");
@@ -124,13 +176,12 @@ function secondLevel(index) {
 }
 
 const seeTecjers = () => {
-
   $(".Teachers").html("");
   $(".cards").hide();
-  $(".videoPro").hide(); 
-  $(".introduction").hide(); 
+  $(".videoPro").hide();
+  $(".introduction").hide();
   $(".oneitem").hide();
-  $(".seconditme").hide(); 
+  $(".seconditme").hide();
   for (let index = 0; index < learning.length; index++) {
     console.log(learning[index]);
     const item = learning[index];
@@ -140,5 +191,5 @@ const seeTecjers = () => {
     </div>`);
     $(`#Teacherbtn${index}`).click(() => seeTecjers(index));
   }
-}; 
+};
 //seeTecjers(); إذا حيتها داخل الاقواس تطلع recution function too much loading ...
