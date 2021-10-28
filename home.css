@@ -47,12 +47,13 @@ nav ol li:hover a {
 }
 nav .search_box {
   display: flex;
+  border-radius: 20%; 
   margin: auto 0;
   height: 35px;
   line-height: 35px;
 }
 nav .search_box input {
-  border: none;
+  border: none; 
   outline: none;
   background: #ffffff;
   height: 100%;
@@ -70,7 +71,7 @@ nav .search_box span {
   cursor: pointer;
   z-index: 1;
   margin: 0%;
-}
+} 
 .searchButton{
   background: #60ce80;
   border: none; 
@@ -253,7 +254,7 @@ input[type="checkbox"] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 2px 45px;
+  /* margin: 2px 45px; */
   cursor: pointer;
   border-radius: 50%;
 }
